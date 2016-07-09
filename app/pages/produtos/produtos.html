@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Produtos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="produtos">
+  <ion-list inset>
+    <ion-item-sliding *ngFor="let birthday of birthdays">      
+      <ion-item>
+        <h2>{{ birthday.Nome }}</h2>
+        <p>
+        {{ birthday.KgLitro }}
+        {{ birthday.Preco}}
+        {{ birthday.Date | date:'ddMMMMyyyy' }}
+        </p>
+      </ion-item>
+      <ion-item-options side="right">
+      <button (click)="showDetail(birthday)">Editar</button>
+      <button  danger (click)="delete(birthday)">
+          <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+    </ion-item-sliding>
+    
+  </ion-list>
+
+  <button (click)="novoProduto()" fab fab-right fab-bottom><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Novo Produto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="novoProduto">
+  <ion-list>
+      <ion-item>
+        <ion-label floating primary>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="birthday.Nome" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating primary>Kg-Litro</ion-label>
+        <ion-input type="text" [(ngModel)]="birthday.KgLitro" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating primary>Preço</ion-label>
+        <ion-input type="text" [(ngModel)]="birthday.Preco" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+            <ion-label floating primary>Birthday</ion-label>
+            <ion-datetime displayFormat="D MMMM, YYYY" pickerFormat="D MMMM YYYY" [(ngModel)]="isoDate"></ion-datetime>
+        </ion-item>
+
+      <div padding>
+        <button (click)="save()" type="submit" primary block>Salvar</button>
+      </div>
+  </ion-list>
+</ion-content>
